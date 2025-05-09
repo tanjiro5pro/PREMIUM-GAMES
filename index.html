@@ -4,22 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TANJIRO GAMES - Install Premium Games</title>
+
+  <!-- Modern styles -->
   <style>
-    /* Add some basic reset for margin and padding */
+    /* Reset default margin and padding for all elements */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    /* Body styling */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2f3b52, #4f5a75);
       color: white;
       overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* Floating particles */
+    /* Floating particles effect */
     .particles {
       position: fixed;
       top: 0;
@@ -32,10 +39,9 @@
 
     .particles span {
       position: absolute;
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
       border-radius: 50%;
-      opacity: 0.8;
-      animation: float 6s infinite linear;
+      animation: float 6s infinite ease-in-out;
     }
 
     @keyframes float {
@@ -50,66 +56,91 @@
       }
     }
 
-    /* Styling for overlay content */
+    /* Main content overlay */
     .overlay {
       text-align: center;
-      padding: 50px;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+      z-index: 10;
     }
 
     .page-title {
-      font-size: 3em;
-      margin-bottom: 20px;
+      font-size: 3.5rem;
+      margin-bottom: 30px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #f1c40f;
     }
 
+    .description {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #f7f7f7;
+      line-height: 1.5;
+    }
+
+    /* Game grid layout */
     .game-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .game-grid a {
-      display: block;
-      text-align: center;
+    /* Game item styling */
+    .game-item {
       position: relative;
-    }
-
-    .game-grid img {
-      width: 100%;
       border-radius: 10px;
-      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .btn {
+    .game-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      border-radius: 10px;
+    }
+
+    .game-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .game-btn {
       position: absolute;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.7);
-      border: none;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      font-weight: bold;
       padding: 10px 20px;
       border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: none;
+      transition: background-color 0.3s ease;
       opacity: 0;
-      transition: opacity 0.3s ease-in-out;
+      z-index: 10;
     }
 
-    .game-grid a:hover .btn {
+    .game-item:hover .game-btn {
       opacity: 1;
+      background-color: #f1c40f;
     }
 
-    /* Glow effect for install buttons */
+    /* Glow animation for button */
     #glow {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
       border-radius: 10px;
       animation: glow 1.5s infinite ease-in-out;
     }
@@ -139,61 +170,48 @@
     <span style="left: 90%; animation-delay: 5s;"></span>
   </div>
 
-  <!-- Main content overlay -->
+  <!-- Content overlay for games -->
   <div class="overlay">
     <h1 class="page-title">PREMIUM MOBILE GAMES</h1>
-    <p>Download and enjoy your favorite premium mobile games for free — only for a limited time!</p>
+    <p class="description">Download and enjoy your favorite premium mobile games for free — only for a limited time!</p>
 
-    <!-- Game Grid -->
+    <!-- Game grid -->
     <div class="game-grid">
-      <!-- Each game is wrapped in a link and button with hover effect -->
-      <a href="javascript:void(0);" onclick="_my();">
+      <div class="game-item">
         <img src="./mincraft picture.jpg" alt="Minecraft">
-        <button class="btn">
-          Install
-          <div id="glow"></div>
-        </button>
-      </a>
+        <button class="game-btn" onclick="_my()">Install</button>
+        <div id="glow"></div>
+      </div>
 
-      <a href="javascript:void(0);" onclick="_my();">
+      <div class="game-item">
         <img src="./spider image 2.jpg" alt="Spider Man">
-        <button class="btn">
-          Install
-          <div id="glow"></div>
-        </button>
-      </a>
+        <button class="game-btn" onclick="_my()">Install</button>
+        <div id="glow"></div>
+      </div>
 
-      <a href="javascript:void(0);" onclick="_my();">
+      <div class="game-item">
         <img src="./gta 5 image 2.jpg" alt="GTA 5">
-        <button class="btn">
-          Install
-          <div id="glow"></div>
-        </button>
-      </a>
+        <button class="game-btn" onclick="_my()">Install</button>
+        <div id="glow"></div>
+      </div>
 
-      <a href="javascript:void(0);" onclick="_my();">
+      <div class="game-item">
         <img src="fortnite image.png" alt="Fortnite">
-        <button class="btn">
-          Install
-          <div id="glow"></div>
-        </button>
-      </a>
+        <button class="game-btn" onclick="_my()">Install</button>
+        <div id="glow"></div>
+      </div>
 
-      <a href="javascript:void(0);" onclick="_my();">
+      <div class="game-item">
         <img src="genshin image.jpg" alt="Genshin Impact">
-        <button class="btn">
-          Install
-          <div id="glow"></div>
-        </button>
-      </a>
+        <button class="game-btn" onclick="_my()">Install</button>
+        <div id="glow"></div>
+      </div>
 
-      <a href="javascript:void(0);" onclick="_my();">
+      <div class="game-item">
         <img src="2k25.jpg" alt="2K25">
-        <button class="btn">
-          Install
-          <div id="glow"></div>
-        </button>
-      </a>
+        <button class="game-btn" onclick="_my()">Install</button>
+        <div id="glow"></div>
+      </div>
     </div>
   </div>
 
@@ -201,7 +219,6 @@
   <script type="text/javascript">
     var ZtWwt_LLN_xvssXc = { "it": 4489318, "key": "c43ea" };
 
-    // Define the _my function
     function _my() {
       alert("You need to install the game to unlock this content.");
     }
