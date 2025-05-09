@@ -19,12 +19,12 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #2f3b52, #4f5a75);
       color: white;
-      overflow: hidden;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       padding: 0 15px;
+      flex-direction: column;
     }
 
     /* Floating particles effect */
@@ -67,6 +67,7 @@
       z-index: 10;
       max-width: 100%;
       width: 100%;
+      overflow-y: auto; /* Allow scrolling if content overflows */
     }
 
     .page-title {
