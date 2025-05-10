@@ -5,16 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TANJIRO GAMES - Install Premium Games</title>
 
-  <!-- Modern styles with mobile-first approach -->
   <style>
-    /* Reset default margin and padding for all elements */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Body styling */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #2f3b52, #4f5a75);
@@ -25,10 +22,9 @@
       align-items: flex-start;
       padding: 0 15px;
       flex-direction: column;
-      overflow-y: scroll; /* Ensure scrolling */
+      overflow-y: scroll;
     }
 
-    /* Floating particles effect */
     .particles {
       position: fixed;
       top: 0;
@@ -36,7 +32,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: -1; /* Ensure particles are behind content */
+      z-index: -1;
     }
 
     .particles span {
@@ -47,18 +43,11 @@
     }
 
     @keyframes float {
-      0% {
-        transform: translateY(0) scale(1);
-      }
-      50% {
-        transform: translateY(-50px) scale(1.5);
-      }
-      100% {
-        transform: translateY(0) scale(1);
-      }
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-50px) scale(1.5); }
+      100% { transform: translateY(0) scale(1); }
     }
 
-    /* Main content overlay */
     .overlay {
       text-align: center;
       padding: 40px;
@@ -68,8 +57,8 @@
       z-index: 10;
       max-width: 100%;
       width: 100%;
-      margin-top: 20px; /* Space between the top and content */
-      overflow-y: auto; /* Allow scrolling inside the content */
+      margin-top: 20px;
+      overflow-y: auto;
     }
 
     .page-title {
@@ -88,7 +77,6 @@
       line-height: 1.5;
     }
 
-    /* Game grid layout */
     .game-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -97,7 +85,6 @@
       margin: 0 auto;
     }
 
-    /* Game item styling */
     .game-item {
       position: relative;
       border-radius: 10px;
@@ -144,7 +131,6 @@
       background-color: #f1c40f;
     }
 
-    /* Glow animation for button */
     #glow {
       position: absolute;
       top: 0;
@@ -157,60 +143,28 @@
     }
 
     @keyframes glow {
-      0% {
-        opacity: 0.2;
-      }
-      50% {
-        opacity: 0.7;
-      }
-      100% {
-        opacity: 0.2;
-      }
+      0% { opacity: 0.2; }
+      50% { opacity: 0.7; }
+      100% { opacity: 0.2; }
     }
 
-    /* Mobile-first styles */
     @media (max-width: 768px) {
-      .page-title {
-        font-size: 2.5rem;
-      }
-
-      .game-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      }
-
-      .description {
-        font-size: 0.9rem;
-      }
+      .page-title { font-size: 2.5rem; }
+      .game-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+      .description { font-size: 0.9rem; }
     }
 
-    /* Small screen/mobile styles */
     @media (max-width: 480px) {
-      .overlay {
-        padding: 20px;
-      }
-
-      .page-title {
-        font-size: 2rem;
-      }
-
-      .description {
-        font-size: 0.8rem;
-      }
-
-      .game-btn {
-        font-size: 0.8rem;
-        padding: 8px 16px;
-      }
-
-      .game-item img {
-        height: 200px;
-      }
+      .overlay { padding: 20px; }
+      .page-title { font-size: 2rem; }
+      .description { font-size: 0.8rem; }
+      .game-btn { font-size: 0.8rem; padding: 8px 16px; }
+      .game-item img { height: 200px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Floating particles effect -->
   <div class="particles">
     <span style="left: 10%; animation-delay: 0s;"></span>
     <span style="left: 25%; animation-delay: 2s;"></span>
@@ -220,60 +174,48 @@
     <span style="left: 90%; animation-delay: 5s;"></span>
   </div>
 
-  <!-- Content overlay for games -->
   <div class="overlay">
     <h1 class="page-title">PREMIUM MOBILE GAMES</h1>
     <p class="description">Download and enjoy your favorite premium mobile games for free — only for a limited time!</p>
 
-    <!-- Game grid -->
     <div class="game-grid">
       <div class="game-item">
         <img src="./mincraft picture.jpg" alt="Minecraft">
-        <button class="game-btn" onclick="_my()">Install</button>
+        <button class="game-btn">Install</button>
         <div id="glow"></div>
       </div>
 
       <div class="game-item">
         <img src="./spider image 2.jpg" alt="Spider Man">
-        <button class="game-btn" onclick="_my()">Install</button>
+        <button class="game-btn" onclick="window.location.href='https://smrturl.co/a/sf1a0d78ce4/813?s1='">Install</button>
         <div id="glow"></div>
       </div>
 
       <div class="game-item">
         <img src="./gta 5 image 2.jpg" alt="GTA 5">
-        <button class="game-btn" onclick="_my()">Install</button>
+        <button class="game-btn" onclick="window.location.href='https://smrturl.co/a/sf1a0d78ce4/1511?s1='">Install</button>
         <div id="glow"></div>
       </div>
 
       <div class="game-item">
         <img src="fortnite image.png" alt="Fortnite">
-        <button class="game-btn" onclick="_my()">Install</button>
+        <button class="game-btn">Install</button>
         <div id="glow"></div>
       </div>
 
       <div class="game-item">
         <img src="genshin image.jpg" alt="Genshin Impact">
-        <button class="game-btn" onclick="_my()">Install</button>
+        <button class="game-btn">Install</button>
         <div id="glow"></div>
       </div>
 
       <div class="game-item">
         <img src="2k25.jpg" alt="2K25">
-        <button class="game-btn" onclick="_my()">Install</button>
+        <button class="game-btn">Install</button>
         <div id="glow"></div>
       </div>
     </div>
   </div>
-
-  <!-- Content Locker Script -->
-  <script type="text/javascript">
-    var ZtWwt_LLN_xvssXc = { "it": 4489318, "key": "c43ea" };
-
-    function _my() {
-      alert("You need to install the game to unlock this content.");
-    }
-  </script>
-  <script src="https://d2v7l2267atlz5.cloudfront.net/5643ec3.js"></script>
 
 </body>
 </html>
