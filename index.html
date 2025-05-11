@@ -1,228 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TANJIRO GAMES - Install Premium Games</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claim Your BTC Reward</title>
+  
+  <!-- External Style Link (Optional, for additional customization) -->
+  <link rel="stylesheet" href="styles.css">
 
   <style>
-    * {
+    /* General Body Style */
+    body {
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      background: linear-gradient(45deg, #ff9900, #ff6600, #cc3300);
+      color: #fff;
+      overflow-x: hidden;
     }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #2f3b52, #4f5a75);
-      color: white;
-      min-height: 100vh;
+    /* Header Section */
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-bottom: 5px solid #fff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    /* Hero Section */
+    .hero {
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: 0 15px;
+      justify-content: center;
+      align-items: center;
       flex-direction: column;
-      overflow-y: scroll;
+      text-align: center;
+      margin-top: 30px;
+      padding: 50px;
     }
 
-    .particles {
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-top: 20px;
+      font-weight: bold;
+      background: linear-gradient(to right, #ffcc00, #ff6600);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #ddd;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      background-color: #ff6600;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #ffcc00;
+    }
+
+    /* Main Content Section */
+    .content {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.4);
+      margin: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    .spacer {
+      height: 700px; /* Allows scrolling to trigger the content locker */
+    }
+
+    /* Content Locker Styling */
+    .content-locker {
+      display: none; /* Hidden initially */
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .particles span {
-      position: absolute;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 50%;
-      animation: float 6s infinite ease-in-out;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-50px) scale(1.5); }
-      100% { transform: translateY(0) scale(1); }
-    }
-
-    .overlay {
-      text-align: center;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 20px;
-      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-      z-index: 10;
-      max-width: 100%;
-      width: 100%;
-      margin-top: 20px;
-      overflow-y: auto;
-    }
-
-    .page-title {
-      font-size: 3rem;
-      margin-bottom: 30px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #f1c40f;
-    }
-
-    .description {
-      font-size: 1rem;
-      margin-bottom: 40px;
-      color: #f7f7f7;
-      line-height: 1.5;
-    }
-
-    .game-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .game-item {
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      text-align: center;
-    }
-
-    .game-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-      border-radius: 10px;
-    }
-
-    .game-item:hover img {
-      transform: scale(1.1);
-    }
-
-    .game-btn {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
       background: rgba(0, 0, 0, 0.8);
-      color: #fff;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .locker-content {
+      background: #1f1f1f;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      width: 80%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    }
+
+    .locker-title {
+      font-size: 1.5rem;
       font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 5px;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ffcc00, #ff6600);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .locker-btn {
+      background-color: #ff6600;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
       border: none;
+      font-weight: bold;
       transition: background-color 0.3s ease;
-      opacity: 0;
-      z-index: 10;
+    }
+
+    .locker-btn:hover {
+      background-color: #ffcc00;
+    }
+
+    .close-locker-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
       cursor: pointer;
     }
 
-    .game-item:hover .game-btn {
-      opacity: 1;
-      background-color: #f1c40f;
+    .close-locker-btn:hover {
+      background-color: darkred;
     }
 
-    #glow {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
-      border-radius: 10px;
-      animation: glow 1.5s infinite ease-in-out;
-    }
-
-    @keyframes glow {
-      0% { opacity: 0.2; }
-      50% { opacity: 0.7; }
-      100% { opacity: 0.2; }
-    }
-
+    /* Responsive Design */
     @media (max-width: 768px) {
-      .page-title { font-size: 2.5rem; }
-      .game-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-      .description { font-size: 0.9rem; }
-    }
+      .hero {
+        padding: 30px;
+      }
 
-    @media (max-width: 480px) {
-      .overlay { padding: 20px; }
-      .page-title { font-size: 2rem; }
-      .description { font-size: 0.8rem; }
-      .game-btn { font-size: 0.8rem; padding: 8px 16px; }
-      .game-item img { height: 200px; }
+      .hero img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .cta-btn {
+        font-size: 1rem;
+        padding: 12px 24px;
+      }
+
+      .locker-content {
+        padding: 30px;
+      }
+
+      .content {
+        margin: 10px;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="particles">
-    <span style="left: 10%; animation-delay: 0s;"></span>
-    <span style="left: 25%; animation-delay: 2s;"></span>
-    <span style="left: 40%; animation-delay: 4s;"></span>
-    <span style="left: 60%; animation-delay: 1s;"></span>
-    <span style="left: 75%; animation-delay: 3s;"></span>
-    <span style="left: 90%; animation-delay: 5s;"></span>
+  <header>
+    <h1>Claim Your Free Bitcoin!</h1>
+    <p>Earn Bitcoin with easy tasks! Get started now and claim 0.1 BTC!</p>
+  </header>
+
+  <div class="hero">
+    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v" alt="Bitcoin Icon">
+    <h2>Get 0.1 BTC Now</h2>
+    <p>Complete tasks, watch videos, and earn free BTC! The more tasks you complete, the more you earn.</p>
+    <button class="cta-btn" onclick="openLocker()">Claim Now</button>
   </div>
 
-  <div class="overlay">
-    <h1 class="page-title">PREMIUM MOBILE GAMES</h1>
-    <p class="description">Download and enjoy your favorite premium mobile games for free — only for a limited time!</p>
+  <div class="content">
+    <h3>How It Works</h3>
+    <p>Our platform is simple: Complete simple tasks, and we'll reward you with Bitcoin. All you need to do is follow the easy instructions, and your BTC will be transferred to your wallet in no time!</p>
+  </div>
 
-    <div class="game-grid">
-      <div class="game-item">
-        <img src="mincraft picture.jpg" alt="Minecraft">
-        <button class="game-btn" onclick="_ET()">Install</button>
-        <div id="glow"></div>
-      </div>
+  <div class="spacer"></div>
 
-      <div class="game-item">
-        <img src="spider image 2.jpg" alt="Spider Man">
-        <button class="game-btn" onclick="_ET()">Install</button>
-        <div id="glow"></div>
-      </div>
-
-      <div class="game-item">
-        <img src="gta 5 image 2.jpg" alt="GTA 5">
-        <button class="game-btn" onclick="_ET()">Install</button>
-        <div id="glow"></div>
-      </div>
-
-      <div class="game-item">
-        <img src="fortnite image.png" alt="Fortnite">
-        <button class="game-btn" onclick="_ET()">Install</button>
-        <div id="glow"></div>
-      </div>
-
-      <div class="game-item">
-        <img src="genshin image.jpg" alt="Genshin Impact">
-        <button class="game-btn" onclick="_ET()">Install</button>
-        <div id="glow"></div>
-      </div>
-
-      <div class="game-item">
-        <img src="2k25.jpg" alt="2K25">
-        <button class="game-btn" onclick="_ET()">Install</button>
-        <div id="glow"></div>
-      </div>
+  <!-- Content Locker (Initially hidden) -->
+  <div id="contentLocker" class="content-locker">
+    <div class="locker-content">
+      <button class="close-locker-btn" onclick="closeLocker()">X</button>
+      <div class="locker-title">Almost There! Claim Your BTC!</div>
+      <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v" alt="Bitcoin Icon" width="80" height="80">
+      <p>Complete your task to claim 0.1 BTC!</p>
+      <button class="locker-btn" onclick="completeTask()">Complete Task</button>
     </div>
   </div>
 
-  <!-- AdBlueMedia Locker Script -->
+  <!-- Content Locker Script -->
   <script type="text/javascript">
-    var pALwH_Orp_NfHaoc = { "it": 4489318, "key": "c43ea" };
+    var mfZvq_bOj_jFMzyc = { "it": 4491341, "key": "dc81e" };
   </script>
-  <script src="https://d2v7l2267atlz5.cloudfront.net/cc68681.js"></script>
+  <script src="https://d2yc6hxtq0phup.cloudfront.net/8e5aa35.js"></script>
+
+  <script>
+    // Function to open the content locker
+    function openLocker() {
+      document.getElementById('contentLocker').style.display = 'flex';
+      _kt(); // Open locker with the provided script function
+    }
+
+    // Function to close the content locker
+    function closeLocker() {
+      document.getElementById('contentLocker').style.display = 'none';
+    }
+
+    // Function to simulate task completion
+    function completeTask() {
+      alert("Congratulations! Your 0.1 BTC has been credited.");
+      closeLocker();
+    }
+
+    // Optional: Open the locker after scrolling (e.g., after 150px)
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 150) {
+        openLocker(); // Open locker after scrolling
+      }
+    });
+  </script>
 
 </body>
 </html>
