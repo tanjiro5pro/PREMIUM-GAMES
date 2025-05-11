@@ -221,8 +221,8 @@
   </header>
 
   <div class="hero">
-    <!-- Using a working Bitcoin logo image -->
-    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=026" alt="Bitcoin Icon">
+    <!-- Updated working Bitcoin image -->
+    <img src="https://www.coingecko.com/favicon.ico" alt="Bitcoin Icon">
     <h2>Get 0.1 BTC Now</h2>
     <p>Complete tasks, watch videos, and earn free BTC! The more tasks you complete, the more you earn.</p>
     <button class="cta-btn" onclick="openLocker()">Claim Now</button>
@@ -240,7 +240,8 @@
     <div class="locker-content">
       <button class="close-locker-btn" onclick="closeLocker()">X</button>
       <div class="locker-title">Almost There! Claim Your BTC!</div>
-      <img src="bitcoin-btc-logo.png" alt="Bitcoin Icon" width="80" height="80">
+      <!-- Updated Bitcoin image inside the content locker -->
+      <img src="https://www.coingecko.com/favicon.ico" alt="Bitcoin Icon" width="80" height="80">
       <p>Complete your task to claim 0.1 BTC!</p>
       <button class="locker-btn" onclick="completeTask()">Complete Task</button>
     </div>
@@ -270,13 +271,4 @@
       closeLocker();
     }
 
-    // Optional: Open the locker after scrolling (e.g., after 150px)
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 150) {
-        openLocker(); // Open locker after scrolling
-      }
-    });
-  </script>
-
-</body>
-</html>
+    // Optional: Open the locker after scrolling (
